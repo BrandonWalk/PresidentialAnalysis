@@ -1,0 +1,5 @@
+gensim
+pandas
+bumpy
+nltk
+wikipedia
