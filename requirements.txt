@@ -1,5 +1,5 @@
 gensim
 pandas
-bumpy
+numpy
 nltk
 wikipedia
