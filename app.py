@@ -1,4 +1,5 @@
 import streamlit as st
+import altair as alt
 from pickle import load
 from nltk.stem import WordNetLemmatizer
 import string
@@ -23,5 +24,9 @@ st.title("Presidential Analysis")
 user_words = st.text_input("Insert words")
 if st.button("Press To Run"):
     data = run_model(user_words)
-    df = DataFrame(data, columns=["President", "Similarity"]).set_index("President").sort_values(by="Similarity")
-    st.bar_chart(data = df["Similarity"])
+    df = DataFrame(data, columns=["President", "Similarity"]).sort_values(by="Similarity")
+    chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X('President', sort=None),
+        y='Similarity'
+    )
+    st.altair_chart(chart, use_container_width=True)
