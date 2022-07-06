@@ -26,6 +26,8 @@ def run_model(user_words):
     return model.docvecs.most_similar([vector])
 
 st.title("Presidential Analysis")
+st.write("Using a ML model called doc2vec trained on Wikipedia articles of US Presidents, you can enter words any number of words and see what article is most relevant.")
+st.write("It is interesting to try historical events, legislative agendas, wars, political rivals, or political jargon and see what president comes up.")
 user_words = st.text_input("Insert words")
 if st.button("Press To Run"):
     data = run_model(user_words)
