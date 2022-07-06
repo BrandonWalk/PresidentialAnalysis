@@ -6,6 +6,11 @@ import string
 from nltk.corpus import stopwords
 from pandas import DataFrame
 
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
 stop_words = stopwords.words('english')
 stop_words.append("-")
 stop_words.append("president")
